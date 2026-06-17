@@ -18,7 +18,7 @@ Entity::Entity(int XSpawn, int YSpawn, int Size, Universe* Context) {
 }
 
 Entity::~Entity() {
-
+	
 }
 
 const float Entity::GetXPosition() {return XPos;}
