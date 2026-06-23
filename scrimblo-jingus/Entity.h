@@ -22,4 +22,3 @@ class Entity {
 		void SetPosition(float NewX, float NewY);
 		int SetScale(int NewScale);
 };
-

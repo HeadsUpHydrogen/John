@@ -5,8 +5,8 @@
 #include "Entity.h"
 
 int main(int argc, char* argv[]) {
-	
 	Universe* JohnUniverse = new Universe();
+	
 	printf("Universe created with a width of %d, and a height of %d\n", JohnUniverse->GetWidth(), JohnUniverse->GetHeight());
 	Entity* JohnEntity = new Entity(16, 16, 32, JohnUniverse);
 	printf("Entity spawned at %f,%f with a size of %d\n", JohnEntity->GetXPosition(), JohnEntity->GetYPosition(), JohnEntity->GetScale());
