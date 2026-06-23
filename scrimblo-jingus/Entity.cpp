@@ -25,16 +25,14 @@ const float Entity::GetXPosition() {return XPos;}
 const float Entity::GetYPosition() { return YPos; }
 const int Entity::GetScale() { return Scale; }
 
-float Entity::SetXPosition(float NewX)
-{
+float Entity::SetXPosition(float NewX) {
 	if (NewX < 0.f) { XPos = 0.f; }
 	else if (Container != nullptr && NewX + (float) Scale > Container->GetWidth()) { XPos = Container->GetWidth() - (float) Scale; }
 	else { XPos = NewX; }
 	return XPos;
 }
 
-float Entity::SetYPosition(float NewY)
-{
+float Entity::SetYPosition(float NewY) {
 	if (NewY < 0.f) { YPos = 0.f; }
 	else if (Container != nullptr && NewY + (float) Scale > Container->GetHeight()) { YPos = Container->GetHeight() - (float) Scale; }
 	else { YPos = NewY; }
