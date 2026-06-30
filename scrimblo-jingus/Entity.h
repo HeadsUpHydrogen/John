@@ -1,7 +1,13 @@
 #pragma once
 
+#ifdef JOHN_EXPORTS
+#define JOHN_API __declspec(dllexport)
+#else
+#define JOHN_API __declspec(dllimport)
+#endif
+
 #include "Universe.h"
-class Entity {
+class JOHN_API Entity {
 	public:
 		Entity();
 		Entity(int XSpawn, int YSpawn, int Size, Universe* Context);
