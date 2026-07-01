@@ -21,10 +21,13 @@
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\scrimblo-jingus\Entity.h">
+    <ClInclude Include="..\scrimblo-jingus\Debug.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\scrimblo-jingus\Debug.h">
+    <ClInclude Include="Entity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Universe.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -35,7 +38,10 @@
     <ClCompile Include="pch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\scrimblo-jingus\Entity.cpp">
+    <ClCompile Include="Entity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Universe.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

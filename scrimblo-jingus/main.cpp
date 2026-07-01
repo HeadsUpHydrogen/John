@@ -1,8 +1,9 @@
 #define MICHAEL 67
 
 #include <stdio.h>
-#include "Universe.h"
-#include "Entity.h"
+#include <stdlib.h>
+#include "John/Universe.h"
+#include "John/Entity.h"
 
 int main(int argc, char* argv[]) {
 	Universe* JohnUniverse = new Universe();
