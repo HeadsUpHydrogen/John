@@ -21,6 +21,7 @@ SDL_Window* WndMain;
 // John Stuff
 Universe* JohnUniverse = new Universe();
 Entity* JohnEntity = new Entity(16, 16, 32, JohnUniverse);
+float MoveSpeed = 1.f;
 
 // Runs once at startup
 SDL_AppResult SDL_AppInit(void** appstate, int argc, char* argv[]) {
@@ -37,14 +38,14 @@ SDL_AppResult SDL_AppInit(void** appstate, int argc, char* argv[]) {
 		return SDL_APP_FAILURE;
 	}
 	
-	// Create the main window
+	//Create the main window
 	WndMain = SDL_CreateWindow("Scrimblo Jingus", 800, 600, SDL_WINDOW_RESIZABLE);
 	
 	// Testing John Stuff
 	printf("Universe created with a width of %d, and a height of %d\n", JohnUniverse->GetWidth(), JohnUniverse->GetHeight());
 	printf("Entity spawned at %f,%f with a size of %d\n", JohnEntity->GetXPosition(), JohnEntity->GetYPosition(), JohnEntity->GetScale());
-	JohnEntity->SetPosition(1077.f, 44.9f);
-	printf("Entity moved to %f, %f\n", JohnEntity->GetXPosition(), JohnEntity->GetYPosition());
+	//JohnEntity->SetPosition(1077.f, 44.9f);
+	//printf("Entity moved to %f, %f\n", JohnEntity->GetXPosition(), JohnEntity->GetYPosition());
 	return SDL_APP_CONTINUE;
 
 
@@ -58,6 +59,8 @@ SDL_AppResult SDL_AppIterate(void* appstate) {
 
 	DeltaTime = (float)(CurrentTime - LastTime) / 1000.f;
 	//printf("%f\n", DeltaTime);
+
+	printf("\rEntity Position: %f, %f", JohnEntity->GetXPosition(), JohnEntity->GetYPosition());
 	return SDL_APP_CONTINUE;
 }
 
@@ -66,6 +69,21 @@ SDL_AppResult SDL_AppEvent(void* appstate, SDL_Event* event) {
 
 	if (event->type == SDL_EVENT_QUIT) {
 		return SDL_APP_SUCCESS;
+	}
+
+	if (event->type == SDL_EVENT_KEY_DOWN) {
+		if (event->key.key == SDLK_UP) {
+			JohnEntity->SetYPosition(JohnEntity->GetYPosition() - MoveSpeed);
+		}
+		if (event->key.key == SDLK_DOWN) {
+			JohnEntity->SetYPosition(JohnEntity->GetYPosition() + MoveSpeed);
+		}
+		if (event->key.key == SDLK_LEFT) {
+			JohnEntity->SetXPosition(JohnEntity->GetXPosition() - MoveSpeed);
+		}
+		if (event->key.key == SDLK_RIGHT) {
+			JohnEntity->SetXPosition(JohnEntity->GetXPosition() + MoveSpeed);
+		}
 	}
 
 	return SDL_APP_CONTINUE;
