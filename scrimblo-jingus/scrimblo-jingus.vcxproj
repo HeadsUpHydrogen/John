@@ -110,7 +110,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)\ExternalLibs\JohnBin\bin;$(SolutionDir)\ExternalLibs\SDL\build;$(SolutionDir)\ExternalLibs\SDL_Net\build;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>John.lib;SDL3.lib;SDL3_test.lib;SDL_uclibc.lib;SDL_net.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>John.lib;SDL3.lib;SDL3_test.lib;SDL_uclibc.lib;SDL3_net.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
       <Command>$(SolutionDir)\scrimblo-jingus\GetDLL.bat</Command>
