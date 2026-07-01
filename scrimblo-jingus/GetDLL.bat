@@ -1,0 +1,1 @@
+copy "..\ExternalLibs\JohnBin\bin\John.dll" "..\x64\Debug"
